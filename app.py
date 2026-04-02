@@ -322,8 +322,8 @@ def render_table(tickers, only_favs=False):
         return "color:#ff3d57"
 
     styled = df_table.style \
-        .applymap(color_signal, subset=["Sinyal"]) \
-        .applymap(color_score,  subset=["Skor"]) \
+        .map(color_signal, subset=["Sinyal"]) \
+        .map(color_score,  subset=["Skor"]) \
         .set_properties(**{"font-family": "Space Mono, monospace", "font-size": "13px"})
 
     st.dataframe(styled, use_container_width=True, height=600)
